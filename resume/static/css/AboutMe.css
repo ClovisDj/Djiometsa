@@ -1,0 +1,247 @@
+body{
+  margin: 0;
+}
+
+/*canvas header block */
+canvas{
+  background-color: rgba(0, 104, 178, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -50;
+}
+
+.head {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  margin-bottom: 0;
+  z-index: 500;
+}
+
+.head .media{
+  z-index: 200;
+}
+
+#clo{
+  display: block;
+  float: left;
+  border-radius: 10px;
+}
+
+.head .col-xs-12{
+  text-align: right;
+  padding: 0;
+}
+
+@media (min-width: 767px){
+  .head .media .media-left{
+    padding: 3.2em 0 0 15em;
+  }
+  .head .media .media-body{
+    padding: 3.2em 15em 0 0;
+  }
+}
+
+@media (max-width: 767px){
+  .head .media .media-left{
+    padding: 3.2em 0 0 1em;
+  }
+  .head .media .media-body{
+    padding: 2.5em 1em 0 0;
+  }
+}
+
+.head .media .media-body{
+  font-family: 'EB Garamond', serif;
+  color: #fff;
+}
+
+.head .media .media-body > h2{
+  margin: 0 0 15px 0;
+}
+
+.head .media .media-body > h3{
+  margin: 0 0 10px 0;
+}
+
+.head .media .media-body > h1{
+  width: auto;
+}
+
+.head .media .media-body > h1 > code, .head .media .media-body > h3 > span{
+  background-color: inherit;
+  color: #ea5900;
+  font-weight: 550;
+}
+
+/*End canvas block */
+
+
+/*navivation bar*/
+.navig .topbar{
+  z-index: 30;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #0068B2;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0 10px 0 10px;
+  height: 3.5em;
+}
+
+.topbar > li {
+  float: left;
+}
+
+.topbar #contact, .topbar #resume{
+  float: right;
+}
+.topbar > li > a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 18px;
+  text-decoration: none;
+  font-family: 'EB Garamond', serif;
+  font-size: 140%;
+  font-weight: 550;
+  height: 30px;
+}
+
+.navig .topbar> li > a, .navig > a {
+  color: #fff;
+}
+
+.navig .topbar > li > a{
+  position: relative;
+  display: block;
+  width: auto;
+  height: auto;
+  height: 3.35em;
+  text-align: center ;
+  border-top-left-radius: 3.8em 3em;
+  border-top-right-radius: 1.6em;
+}
+
+.navig .topbar > #brand{
+  font-size: 135%;
+  font-weight: 550;
+}
+
+.navig .topbar > #brand > a{
+  width: auto;
+  height: 50px;
+  padding: 5px 6px 5px 6px;
+}
+
+.navig .topbar #brand code{
+  background-color: inherit;
+  color: #ea5900;
+  font-size: 120%;
+}
+
+.navig .topbar > #resume:hover, .navig .topbar > #contact:hover{
+  padding-top: 7px;
+  transition: all 0.5s ease-in;
+}
+
+.navbar .navbar-header > a{
+  padding-top: 20px !important;
+}
+
+.navig .topbar #resume > a:hover, .navig .topbar #contact > a:hover{
+  display: block;
+  text-decoration: none;
+  background-color: #fff;
+  color: #0068B2;
+  font-weight: 500;
+  font-size: 130%;
+  transition: all 0.5s ease-in;
+}
+/*End navigation bar*/
+
+
+/*main styling*/
+.main{
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.main .col-xs-12 .jumbotron{
+  font-family: 'EB Garamond', serif !important;
+  font-size: 120%;
+  padding: 20px 20px;
+  background-color: #fff;
+  box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5) !important;
+}
+#myMap{
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5) !important;
+}
+
+#duomo{
+  border-radius: 10px;
+  box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5) !important;
+}
+/*End main*/
+
+/*Email Me Styling*/
+.email{
+  width: auto;
+  height: 50px;
+  position: fixed;
+  right: 10px;
+  bottom: 40px;
+  margin: 0;
+  padding: 0;
+  z-index: 5000;
+
+}
+
+.email > p{
+  background-color: #0068B2 !important;
+  padding: 10px 5px;
+  width: inherit;
+  border: none;
+  box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5);
+}
+
+.emailForm{
+  background-color: #EFEFF2;
+  width: inherit;
+  height: 500px;
+  position: fixed;
+  right: 10px;
+  bottom: 46px;
+  margin: 0;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5);
+  z-index: 4000;
+
+}
+
+.emailForm #closeButton{
+  height: 0;
+  margin: 0;
+  float: left;
+  border-radius: 10px;
+}
+
+.emailForm #closeButton button{
+  margin: -70px 0 0 -30px;
+  border-radius: 25px;
+  color: #fff;
+}
+
+.emailForm #closeButton .btn-primary{
+  /*background-color: #ea5900;*/
+}
+/*End Email*/
