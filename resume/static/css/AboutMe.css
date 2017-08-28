@@ -36,7 +36,7 @@ canvas{
   padding: 0;
 }
 
-@media (min-width: 767px){
+@media (min-width: 900px){
   .head .media .media-left{
     padding: 3.2em 0 0 15em;
   }
@@ -45,7 +45,7 @@ canvas{
   }
 }
 
-@media (max-width: 767px){
+@media (max-width: 900px){
   .head .media .media-left{
     padding: 3.2em 0 0 1em;
   }
@@ -68,7 +68,9 @@ canvas{
 }
 
 .head .media .media-body > h1{
+  font-size: 300%;
   width: auto;
+  margin-top: 0;
 }
 
 .head .media .media-body > h1 > code, .head .media .media-body > h3 > span{
@@ -76,96 +78,7 @@ canvas{
   color: #ea5900;
   font-weight: 550;
 }
-
 /*End canvas block */
-
-
-/*navivation bar*/
-.navig .topbar{
-  z-index: 30;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #0068B2;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 0 10px 0 10px;
-  height: 3.5em;
-}
-
-.topbar > li {
-  float: left;
-}
-
-.topbar #contact, .topbar #resume{
-  float: right;
-}
-.topbar > li > a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 18px;
-  text-decoration: none;
-  font-family: 'EB Garamond', serif;
-  font-size: 140%;
-  font-weight: 550;
-  height: 30px;
-}
-
-.navig .topbar> li > a, .navig > a {
-  color: #fff;
-}
-
-.navig .topbar > li > a{
-  position: relative;
-  display: block;
-  width: auto;
-  height: auto;
-  height: 3.35em;
-  text-align: center ;
-  border-top-left-radius: 3.8em 3em;
-  border-top-right-radius: 1.6em;
-}
-
-.navig .topbar > #brand{
-  font-size: 135%;
-  font-weight: 550;
-}
-
-.navig .topbar > #brand > a{
-  width: auto;
-  height: 50px;
-  padding: 5px 6px 5px 6px;
-}
-
-.navig .topbar #brand code{
-  background-color: inherit;
-  color: #ea5900;
-  font-size: 120%;
-}
-
-.navig .topbar > #resume:hover, .navig .topbar > #contact:hover{
-  padding-top: 7px;
-  transition: all 0.5s ease-in;
-}
-
-.navbar .navbar-header > a{
-  padding-top: 20px !important;
-}
-
-.navig .topbar #resume > a:hover, .navig .topbar #contact > a:hover{
-  display: block;
-  text-decoration: none;
-  background-color: #fff;
-  color: #0068B2;
-  font-weight: 500;
-  font-size: 130%;
-  transition: all 0.5s ease-in;
-}
-/*End navigation bar*/
-
 
 /*main styling*/
 .main{
@@ -178,70 +91,38 @@ canvas{
   font-size: 120%;
   padding: 20px 20px;
   background-color: #fff;
-  box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5) !important;
+  box-shadow: 5px 8px 15px 2px rgba(0,0,0,0.5) !important;
 }
+
+.main .col-xs-12 .jumbotron > #Cm{
+  width: 125px;
+  border-bottom: 3px solid rgba(0, 104, 178, 0.7);
+}
+
+.main .col-xs-12 .jumbotron > #It{
+  width: 55px;
+  border-bottom: 3px solid rgba(0, 104, 178, 0.7);
+}
+
+.main .col-xs-12 .jumbotron > #Cn{
+  width: 90px;
+  border-bottom: 3px solid rgba(0, 104, 178, 0.7);
+}
+
+.main .col-xs-12 .jumbotron > #Us{
+  width: 60px;
+  border-bottom: 3px solid rgba(0, 104, 178, 0.7);
+}
+
 #myMap{
   margin-bottom: 30px;
   border-radius: 10px;
   box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5) !important;
 }
 
-#duomo{
+#duomo, #montreal, #austin{
   border-radius: 10px;
+  margin-bottom: 30px;
   box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5) !important;
 }
 /*End main*/
-
-/*Email Me Styling*/
-.email{
-  width: auto;
-  height: 50px;
-  position: fixed;
-  right: 10px;
-  bottom: 40px;
-  margin: 0;
-  padding: 0;
-  z-index: 5000;
-
-}
-
-.email > p{
-  background-color: #0068B2 !important;
-  padding: 10px 5px;
-  width: inherit;
-  border: none;
-  box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5);
-}
-
-.emailForm{
-  background-color: #EFEFF2;
-  width: inherit;
-  height: 500px;
-  position: fixed;
-  right: 10px;
-  bottom: 46px;
-  margin: 0;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5);
-  z-index: 4000;
-
-}
-
-.emailForm #closeButton{
-  height: 0;
-  margin: 0;
-  float: left;
-  border-radius: 10px;
-}
-
-.emailForm #closeButton button{
-  margin: -70px 0 0 -30px;
-  border-radius: 25px;
-  color: #fff;
-}
-
-.emailForm #closeButton .btn-primary{
-  /*background-color: #ea5900;*/
-}
-/*End Email*/

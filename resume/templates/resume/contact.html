@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block title %}
+  <title>Contact</title>
+{% endblock %}
+
+{% block ClassName1 %}
+  class='active'
+{% endblock %}
+
+{% block body %}
+<div class="container main">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <div class="jumbotron">
+      <div class="header">
+        <h3>Conact And Links</h3>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

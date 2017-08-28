@@ -10,15 +10,6 @@
 {% endblock %}
 
 {% block body %}
-
-  <div class="navig">
-    <ul class="topbar">
-      <li id="brand"><a href="#home"><code>{</code>Clovis<code>}</code></a></li>
-      <li id="contact"><a href="#contact">Contact</a></li>
-      <li id="resume"><a href="#news">Resume</a></li>
-    </ul>
-  </div>
-
   <div class="head">
     <div class="container-fluid">
       <canvas id="animation"></canvas>
@@ -30,7 +21,7 @@
               </div>
               <div class="media-body">
                 <h1><code>{</code>Clovis_Djiometsa<code>}</code></h1>
-                <h3>Full Stack Web Developer</h3>
+                <h2>Full Stack Web Developer</h2>
                 <h3>Python <span>|</span> Django <span>|</span> Javascript</h3>
               </div>
         </div>
@@ -45,6 +36,7 @@
     <div class="col-xs-12 col-md-10 col-md-offset-1">
       <div class="col-xs-12 col-md-6">
         <div class="jumbotron">
+          <h2 id="Cm">Cameroon</h2>
           <p>Hello first of all, I would like to thank you. Because if you're reading this it means you have shown a certain interest for my profile.</p>
           <p>My first name is <span>Clovis</span> and last name <span>Djiometsa Ngnitewe</span>. I was born in Cameroon where I got in 2001 a High School degree in <span>Mathematics and Physics</span>. Then I attended the University of Yaounde I where I got an undergraduate degree in Mathematics in 2004. </p>
         </div>
@@ -64,6 +56,7 @@
     <div class="col-xs-12 col-md-10 col-md-offset-1">
       <div class="col-xs-12 col-md-6">
         <div class="jumbotron">
+          <h2 id="It">Italy</h2>
           <p>Then in 2005 I got admitted at the prestigious <span>Polytechnic University of Milan-Italy</span>. From where I graduated with Honor in 2009 in Mechanical Engineering. Upon graduate I got a job offer from a well established automotive company where I worked as Mechanical Design Engineer. </p>
         </div>
       </div>
@@ -76,67 +69,42 @@
       </div>
     </div>
   </div>
-</div>
-
-
-<div class="email">
-  <p class="btn btn-info btn-lg">
-    <span class="glyphicon glyphicon-envelope"></span> Email Me
-  </p>
-</div>
-
-
-    <div id="emailText" class="row hidden">
-      <div class="col-xs-11 col-sm-6 col-xs-offset-1">
-        <div class="emailForm">
-          <div class="row">
-            <p id="closeButton"><button type="button" class="btn btn-danger">X</button></p>
-          </div>
-          <form  method="POST">
-            <div class="row">
-              <div class="col-xs-6">
-                <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Your Name" name="name">
-                </div>
-              </div>
-              <div class="col-xs-6" style="text-align: right;">
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="Your Email" name="email">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12">
-                <div class="form-group">
-                  <label for="Subjet">Subject</label>
-                  <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12">
-                <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea class="form-control" rows="10" id="message"></textarea>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="row">
-              <div class="col-xs-12" style="text-align: right;">
-                <button type="submit" class="btn btn-primary">Send</button>
-              </div>
-            </div>
-
-        </form>
+  <div class="row">
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
+      <div class="col-xs-12 col-md-6">
+        <div class="jumbotron">
+          <h2 id="Cn">Canada</h2>
+          <p>In late 2014, I immigrate to Canada specifically in the Montreal Area where I worked for Bombardier as Mechanical Design Engineer. </p>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
+      <div class="col-xs-12 col-md-6 col-md-offset-6">
+        <img id="montreal" src="{% static 'image/montreal2.jpg' %}" class="img-responsive" style="width:100%;" alt="Image Not Found">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
+      <div class="col-xs-12 col-md-6">
+        <div class="jumbotron">
+          <h2 id="Us">USA</h2>
+          <p>Finally, In December 2016 I Joined my wife in the U.S in the Austin, Texas area. Though, I have always been a tech passionate guy, moving here in the U.S finally made me realize that I could still make this dream comes true. Being a Web Developer!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
+      <div class="col-xs-12 col-md-6 col-md-offset-6">
+        <img id="austin" src="{% static 'image/austin.jpg' %}" class="img-responsive" style="width:100%;" alt="Image Not Found">
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
-
 
 {% block javascript %}
   <script type="text/javascript" src="{% static 'js/Anime.js' %}"></script>

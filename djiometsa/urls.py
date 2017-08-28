@@ -20,4 +20,6 @@ from resume import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.AboutMe.as_view(), name='About_Me'),
+    url(r'^resume/', views.Resume.as_view(), name='resume'),
+    url(r'^contact/', views.Contact.as_view(), name='contact'),
 ]

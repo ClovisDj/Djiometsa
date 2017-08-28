@@ -17,30 +17,91 @@
 
     {% endblock %}
   </head>
-<body>
-{% block body %}
+  <body>
+    <div class="navig">
+      <ul class="topbar">
+        <li id="brand"><a href="{% url 'About_Me' %}"><code>{</code>Clovis<code>}</code></a></li>
+        <li id="contact" {% block ClassName1 %} {% endblock %} ><a href="{% url 'contact' %}">Contact</a></li>
+        <li id="resume" {% block ClassName2 %} {% endblock %}><a href="{% url 'resume' %}">Resume</a></li>
+      </ul>
+    </div>
+    {% block body %}
 
-{% endblock %}
+    {% endblock %}
 
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="media">
-          <div class="media-body">
-            <h5 class="media-heading">&copy; 2017 Clovis Djiometsa</h5>
+    <div class="email">
+      <p class="btn btn-info btn-lg">
+        <span class="glyphicon glyphicon-envelope"></span> Email Me
+      </p>
+    </div>
+
+
+    <div id="emailText" class="row hidden">
+    <div class="col-xs-11 col-sm-6 col-md-4 col-xs-offset-1">
+      <div class="emailForm">
+        <div class="row">
+          <p id="closeButton"><button type="button" class="btn btn-danger">&#10005;</button></p>
+        </div>
+        <form  method="POST">
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Your Name" name="name">
+              </div>
+            </div>
+            <div class="col-xs-6" style="text-align: right;">
+              <div class="form-group">
+                <label style="float: left;" for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Your Email" name="email">
+              </div>
+            </div>
           </div>
-          <div class="media-right">
-            <img src="{% static 'logo/logo.png'%}" class="media-object" alt="logo">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="Subjet">Subject</label>
+                <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" rows="12" id="message"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <button id="send" type="submit" class="btn btn-primary">Send</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="media">
+            <div class="media-body">
+              <h5 class="media-heading">&copy; 2017 Clovis Djiometsa</h5>
+            </div>
+            <div class="media-right">
+              <img src="{% static 'logo/logo.png'%}" class="media-object" alt="logo">
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
+    <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+    {% block javascript %}
 
-{% block javascript %}
-
-{% endblock %}
+    {% endblock %}
 </body>
 </html>
