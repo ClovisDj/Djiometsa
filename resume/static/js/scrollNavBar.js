@@ -1,6 +1,9 @@
 
 $(document).ready(function() {
 
+  $('.main').css('margin-top', $("#animation").height()-$(".head").height() +50);
+
+  var myTimeout;
   $('.media-body').mouseenter(function() {
     myTimeout = setTimeout(function() {
       $('.media-body>h1').text("Clovis Djiometsa Ngnitewe").hide();
@@ -34,6 +37,12 @@ $(document).ready(function() {
   }).resize();
 
   $('#myMap,#duomo,#montreal,#austin').click(function() {
+    $(this).parent().removeClass('col-md-6').removeClass('col-md-offset-6').addClass('col-md-12');
+  }).mouseleave(function() {
+    $(this).parent().addClass('col-md-6').addClass('col-md-offset-6');
+  })
+
+  $('#myMap').mouseenter(function() {
     $(this).parent().removeClass('col-md-6').removeClass('col-md-offset-6').addClass('col-md-12');
   }).mouseleave(function() {
     $(this).parent().addClass('col-md-6').addClass('col-md-offset-6');

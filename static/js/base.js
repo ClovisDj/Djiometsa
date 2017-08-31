@@ -1,6 +1,13 @@
 $(document).ready(function() {
 
   var myTimeout;
+
+  $( window ).resize(function() {
+    if( $(window).width() >= 768 ) {
+      $('.topbar').css("padding-right", 70);
+    }
+  }).resize();
+
   $('.navig>.topbar>#brand').mouseenter(function() {
     myTimeout = setTimeout(function() {
       $('.navig>.topbar>#brand').children().text("Clovis Djiometsa");

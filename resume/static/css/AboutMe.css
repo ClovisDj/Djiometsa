@@ -82,6 +82,7 @@ canvas{
 
 /*main styling*/
 .main{
+  position: static;
   margin-top: 100px;
   margin-bottom: 50px;
 }
