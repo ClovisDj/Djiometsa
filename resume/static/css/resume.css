@@ -76,12 +76,11 @@
   border: 3px solid rgba(0, 104, 178, 0.7);
   margin: 20px 0 0 0;
 }
-/*.main .col-xs-12 .jumbotron .experience .connect4 .col-xs-6> h3:first-of-type{
-  margin-bottom: 0;
-}
 
-.main .col-xs-12 .jumbotron .experience .connect4 .col-xs-6> h3{
-  margin-top: 0;
-}*/
+.main .col-xs-12 .jumbotron .education > h3{
+  width: 50px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid rgba(0, 104, 178, 0.7);
+}
 
 /*End main*/

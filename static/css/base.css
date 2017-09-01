@@ -32,7 +32,6 @@ body{
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 0 10px 0 10px;
   height: 3.5em;
 }
 
@@ -98,6 +97,18 @@ body{
   font-weight: 500;
   font-size: 130%;
   transition: all 0.5s ease-in;
+}
+
+@media (min-width: 768px){
+  .navig .topbar{
+    padding: 0 5em 0 1em;
+  }
+}
+
+@media (max-width: 768px){
+  .navig .topbar{
+    padding: 0 1em 0 1em;
+  }
 }
 /*End navigation bar*/
 

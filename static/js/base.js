@@ -2,11 +2,11 @@ $(document).ready(function() {
 
   var myTimeout;
 
-  $( window ).resize(function() {
-    if( $(window).width() >= 768 ) {
-      $('.topbar').css("padding-right", 70);
-    }
-  }).resize();
+  // $( window ).resize(function() {
+  //   if( $(window).width() >= 768 ) {
+  //     $('.topbar').css("padding-right", 70);
+  //   }
+  // }).resize();
 
   $('.navig>.topbar>#brand').mouseenter(function() {
     myTimeout = setTimeout(function() {
