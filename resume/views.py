@@ -52,7 +52,7 @@ def sendEmail(request):
                     currentContact.save()
 
                 from_email = 'clovis@dnclovis.com'
-                html_autoReply = "<p>Dear <strong>"+name.title()+" </strong></p><p>Thank you for reaching me out, I will respond assoon as possible.</p><p>Thank You!</p><br><p>-------</p><p>Clovis Djiometsa</p><p>Full Stack Web Developer</p>"
+                html_autoReply = "<p>Dear <strong>"+name.title()+" </strong></p><p>Thank you for reaching me out , I will be getting in touch with you as soon as possible.</p><p>Yours Sincerely,</p><br><p>-------</p><p>Clovis Djiometsa</p><p>Full Stack Web Developer</p>"
                 subject_autoreply = name+' Thank you for your message.'
                 msg = EmailMultiAlternatives(subject_autoreply, html_autoReply, from_email, [email])
                 msg.attach_alternative(html_autoReply, "text/html")
