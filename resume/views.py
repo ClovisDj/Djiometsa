@@ -52,13 +52,13 @@ def sendEmail(request):
                     currentContact.message = message
                     currentContact.save()
 
-                from_email = 'admin@playconnect4.com'
+                from_email = 'clovis@dnclovis.com'
                 html_autoReply = "<p>Dear <strong>"+name.title()+" </strong></p><p>Thank you for reaching me out, I will respond assoon as possible.</p><p>Thank You!</p><br><p>-------</p><p>Clovis Djiometsa</p><p>Full Stack Web Developer</p>"
                 subject_autoreply = name+' Thank you for your message.'
                 msg = EmailMultiAlternatives(subject_autoreply, html_autoReply, from_email, [email])
                 msg.attach_alternative(html_autoReply, "text/html")
                 msg.send()
-                msg_toMe = EmailMultiAlternatives(subject, message, from_email, ['noreply@playconnect4.com'])
+                msg_toMe = EmailMultiAlternatives(subject, 'From: '+email+': '+message, from_email, [from_email])
                 msg_toMe.send()
 
                 data = {'status': 'good'}

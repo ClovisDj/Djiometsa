@@ -29,6 +29,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+
 # Email settings
 EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
 EMAIL_HOST = 'email-smtp.us-west-2.amazonaws.com'
@@ -84,28 +90,33 @@ WSGI_APPLICATION = 'djiometsa.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'resume',
+#         'USER': 'root',
+#         'PASSWORD': 'kelvia83',
+#         'OPTIONS': {
+#             # Tell MySQLdb to connect with 'utf8mb4' character set
+#             'charset': 'utf8mb4',
+#         },
+#         # Tell Django to build the test database with the 'utf8mb4' character set
+#         'TEST': {
+#             'CHARSET': 'utf8mb4',
+#             'COLLATION': 'utf8mb4_unicode_ci',
+#         }
 #     }
 # }
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'resume',
-        'USER': 'root',
-        'PASSWORD': 'kelvia83',
-        'OPTIONS': {
-            # Tell MySQLdb to connect with 'utf8mb4' character set
-            'charset': 'utf8mb4',
-        },
-        # Tell Django to build the test database with the 'utf8mb4' character set
-        'TEST': {
-            'CHARSET': 'utf8mb4',
-            'COLLATION': 'utf8mb4_unicode_ci',
-        }
+        'NAME': 'Dnclovis_Db',
+        'USER': 'DjiometsaResume',
+        'PASSWORD': '&MySiteDb*Clo',
+        'HOST': 'resumedb.cqtmej9hyamw.us-west-2.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 
@@ -147,5 +158,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    STATIC_DIR,
+    os.path.join(BASE_DIR, "resume/static")
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
