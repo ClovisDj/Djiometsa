@@ -48,22 +48,14 @@ def sendEmail(request):
                     currentContact = Contact.objects.get(email__iexact=email)
                     currentContact.subject = subject
                     currentContact.message = message
-                    currentContact.messageList.append(subject+'|'+message)
                     currentContact.save()
-                    if currentContact.count >=3:
-                        Contact.objects.all().filter(email__iexact=email).update( messageList=ListF('messageList').popleft() )
-                    else:
-                        currentContact.count = currentContact.count + 1
-                        currentContact.save()
+
                 else:
                     currentContact = Contact()
                     currentContact.name = name
                     currentContact.email = email
                     currentContact.subject = subject
                     currentContact.message = message
-                    currentContact.count = 0
-                    currentContact.messageList.append(subject+'|'+message)
-                    currentContact.count = currentContact.count + 1
                     currentContact.save()
 
                 data = {'status': 'good'}

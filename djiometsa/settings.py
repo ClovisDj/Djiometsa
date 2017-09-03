@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'djiometsa.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'clovis',
+        'NAME': 'resume',
         'USER': 'root',
         'PASSWORD': 'kelvia83',
         'OPTIONS': {

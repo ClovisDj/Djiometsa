@@ -7,12 +7,6 @@ class Contact(models.Model):
     email = models.EmailField(primary_key=True)
     subject = models.CharField(max_length=150)
     message = models.CharField(max_length=1000)
-    count = models.IntegerField()
-    messageList = ListCharField(
-        base_field=models.CharField(max_length=1100),
-        max_length=3000,
-        default ='',
-    )
 
     def __str__(self):
         return self.name +': '+self.email
