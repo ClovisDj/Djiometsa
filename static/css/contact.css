@@ -1,0 +1,50 @@
+/*Nav bar styling*/
+.navig .topbar .active > a{
+  background-color: #fff;
+  color: #0068B2;
+  font-weight: 500;
+  font-size: 130%;
+}
+
+.navig .topbar > #contact{
+  padding-top: 7px;
+}
+/*End Nav bar*/
+
+/*main styling*/
+.main{
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+.main .col-xs-12 .jumbotron{
+  font-family: 'EB Garamond', serif !important;
+  font-size: 10px;
+  padding: 20px 30px;
+  background-color: #fff;
+  box-shadow: 5px 8px 15px 2px rgba(0,0,0,0.5) !important;
+  border-radius: 10px;
+}
+
+.main .col-xs-12 .jumbotron .header > h3{
+  width: 185px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid rgba(0, 104, 178, 0.7);
+}
+
+.main .col-xs-12 .jumbotron .links{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.main .col-xs-12 .jumbotron .row .col-xs-6 #github{
+  margin: 0 auto;
+}
+
+.main .col-xs-12 .jumbotron .row .col-xs-6 #linkedin{
+  padding-top: 36px;
+  padding-bottom: 36px;
+  margin: 0 auto;
+}
+
+/*End main*/

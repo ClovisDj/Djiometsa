@@ -1,0 +1,129 @@
+body{
+  margin: 0;
+}
+
+/*canvas header block */
+canvas{
+  background-color: rgba(0, 104, 178, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -50;
+}
+
+.head {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  margin-bottom: 0;
+  z-index: 500;
+}
+
+.head .media{
+  z-index: 200;
+}
+
+#clo{
+  display: block;
+  float: left;
+  border-radius: 10px;
+}
+
+.head .col-xs-12{
+  text-align: right;
+  padding: 0;
+}
+
+@media (min-width: 900px){
+  .head .media .media-left{
+    padding: 3.2em 0 0 15em;
+  }
+  .head .media .media-body{
+    padding: 3.2em 15em 0 0;
+  }
+}
+
+@media (max-width: 900px){
+  .head .media .media-left{
+    padding: 3.2em 0 0 1em;
+  }
+  .head .media .media-body{
+    padding: 2.5em 1em 0 0;
+  }
+}
+
+.head .media .media-body{
+  font-family: 'EB Garamond', serif;
+  color: #fff;
+}
+
+.head .media .media-body > h2{
+  margin: 0 0 15px 0;
+}
+
+.head .media .media-body > h3{
+  margin: 0 0 10px 0;
+}
+
+.head .media .media-body > h1{
+  font-size: 300%;
+  width: auto;
+  margin-top: 0;
+}
+
+.head .media .media-body > h1 > code, .head .media .media-body > h3 > span{
+  background-color: inherit;
+  color: #ea5900;
+  font-weight: 550;
+}
+/*End canvas block */
+
+/*main styling*/
+.main{
+  position: static;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.main .col-xs-12 .jumbotron{
+  font-family: 'EB Garamond', serif !important;
+  font-size: 120%;
+  padding: 20px 20px;
+  background-color: #fff;
+  box-shadow: 5px 8px 15px 2px rgba(0,0,0,0.5) !important;
+}
+
+.main .col-xs-12 .jumbotron > #Cm{
+  width: 125px;
+  border-bottom: 3px solid rgba(0, 104, 178, 0.7);
+}
+
+.main .col-xs-12 .jumbotron > #It{
+  width: 55px;
+  border-bottom: 3px solid rgba(0, 104, 178, 0.7);
+}
+
+.main .col-xs-12 .jumbotron > #Cn{
+  width: 90px;
+  border-bottom: 3px solid rgba(0, 104, 178, 0.7);
+}
+
+.main .col-xs-12 .jumbotron > #Us{
+  width: 60px;
+  border-bottom: 3px solid rgba(0, 104, 178, 0.7);
+}
+
+#myMap{
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5) !important;
+}
+
+#duomo, #montreal, #austin{
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5) !important;
+}
+/*End main*/
