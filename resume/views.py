@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from resume.models import Contact
-from resume.form import ContactModelForm
 from django.http import HttpResponseRedirect, Http404, JsonResponse
 from django.core.mail import send_mail, EmailMessage, EmailMultiAlternatives
 # Create your views here.
