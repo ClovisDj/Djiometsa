@@ -27,7 +27,11 @@ SECRET_KEY = 'a0)ieov$g_ni&--gb+zzu=!j#0#1pbaob8y-7r)#z0e4+-@ou)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'clovis-env.us-west-2.elasticbeanstalk.com',
+    'dnclovis.com',
+    'www.dnclovis.com',
+]
 
 
 CSRF_COOKIE_SECURE = True
