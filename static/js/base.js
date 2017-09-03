@@ -26,8 +26,7 @@ $(document).ready(function() {
 })
 
 // Ajax POST
-// $(document).ready(function() {
-
+$(document).ready(function() {
 
   $('#send').click(function(event) {
 
@@ -37,7 +36,6 @@ $(document).ready(function() {
       subject: $('#subject').val(),
       message: $('#message').val(),
     };
-    var data2 = $("#form").serialize();
 
     $.ajax({
       type: "POST",
@@ -45,6 +43,9 @@ $(document).ready(function() {
       dataType: "json",
       data: data,
       success: function(data) {
+
+        console.log(data);
+
         if (data['status'] === 'good') {
           $('#status').text("Message Successfully Delivered, thank you I will be reaching you out very soon.");
           $('#status').css('color','green');
@@ -52,9 +53,10 @@ $(document).ready(function() {
           $('#email').val('');
           $('#subject').val('');
           $('#message').val('');
+        }else {
+          $('#status').text(data['status']);
+          $('#status').css('color','red');
         }
-
-        // console.log(data);
       },
       error : function(xhr,errmsg,err) {
         $('#error').text("Server Error encountered please try again, thanks!");
@@ -63,7 +65,7 @@ $(document).ready(function() {
     });
     event.preventDefault();
   })
-// })
+})
 
 var csrftoken = Cookies.get('csrftoken');
 

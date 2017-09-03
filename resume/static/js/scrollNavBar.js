@@ -5,14 +5,14 @@ $(document).ready(function() {
 
   var myTimeout;
   $('.media-body').mouseenter(function() {
-    myTimeout = setTimeout(function() {
+    // myTimeout = setTimeout(function() {
       $('.media-body>h1').text("Clovis Djiometsa Ngnitewe").hide();
-      $('.media-body>h1').fadeIn(800);
-      }, 500);
+      $('.media-body>h1').show();
+      // }, 500);
     }).mouseleave(function() {
-        clearTimeout(myTimeout);
+        // clearTimeout(myTimeout);
         $('.media-body>h1').html("<code>{</code>Clovis_Djiometsa<code>}</code>").hide();
-        $('.media-body>h1').fadeIn(800);
+        $('.media-body>h1').show();
       });
 
   var cssImgOn = {

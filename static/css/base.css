@@ -195,7 +195,7 @@ body{
   font-size: 15px;
   padding: 0px 4px;
   margin: -52px 0 0 -10px;
-  border-radius: 25px;
+  border-radius: 30px;
   color: #fff;
 }
 
@@ -206,4 +206,5 @@ body{
 .emailForm #send{
   float: right;
 }
+
 /*End Email*/

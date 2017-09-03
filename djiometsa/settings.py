@@ -29,6 +29,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Email settings
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+EMAIL_HOST = 'email-smtp.us-west-2.amazonaws.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'AKIAII4WM7MD2DJPCQOA'
+EMAIL_HOST_PASSWORD = 'AqcUR6JDBjKp9BW/KJUbUsYym8bekFJ4a/lpXnsrBAJu'
+EMAIL_USE_TLS = True
 
 # Application definition
 

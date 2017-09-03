@@ -3,8 +3,7 @@ from django.views.generic import TemplateView
 from resume.models import Contact
 from resume.form import ContactModelForm
 from django.http import HttpResponseRedirect, Http404, JsonResponse
-from django_mysql.models import ListF
-from django_mysql.models.functions import *
+from django.core.mail import send_mail, EmailMessage, EmailMultiAlternatives
 # Create your views here.
 
 class AboutMe(TemplateView):
@@ -36,11 +35,6 @@ def sendEmail(request):
         email = request.POST.get('email')
         subject = request.POST.get('subject')
         message = request.POST.get('message')
-        # form = Contact()
-        # form.name = name
-        # form.email = email
-        # form.subject = subject
-        # form.message = message
 
         if name and email and subject and message:
             if validateEmail(email):
@@ -58,11 +52,20 @@ def sendEmail(request):
                     currentContact.message = message
                     currentContact.save()
 
+                from_email = 'admin@playconnect4.com'
+                html_autoReply = "<p>Dear <strong>"+name.title()+" </strong></p><p>Thank you for reaching me out, I will respond assoon as possible.</p><p>Thank You!</p><br><p>-------</p><p>Clovis Djiometsa</p><p>Full Stack Web Developer</p>"
+                subject_autoreply = name+' Thank you for your message.'
+                msg = EmailMultiAlternatives(subject_autoreply, html_autoReply, from_email, [email])
+                msg.attach_alternative(html_autoReply, "text/html")
+                msg.send()
+                msg_toMe = EmailMultiAlternatives(subject, message, from_email, ['noreply@playconnect4.com'])
+                msg_toMe.send()
+
                 data = {'status': 'good'}
                 return JsonResponse(data)
 
             else:
-                data = data = {'status': 'Invalid email. Please verify your email and resubmit. thanks!'}
+                data = {'status': 'Invalid email. Please verify your email and resubmit. thanks!'}
                 return JsonResponse(data)
         else:
             data = {'status': 'Please verify the fields and try again, thanks!'}
