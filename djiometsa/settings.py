@@ -28,9 +28,9 @@ SECRET_KEY = 'a0)ieov$g_ni&--gb+zzu=!j#0#1pbaob8y-7r)#z0e4+-@ou)'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'clovis-env.us-west-2.elasticbeanstalk.com',
-    'dnclovis.com',
     'www.dnclovis.com',
+    'clovis-env.us-west-2.elasticbeanstalk.com',
+    'dnclovis.com'
 ]
 
 
