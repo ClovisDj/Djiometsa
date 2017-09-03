@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'resume',
+    'django_mysql',
 ]
 
 MIDDLEWARE = [

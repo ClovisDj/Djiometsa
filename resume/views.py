@@ -1,5 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import View, TemplateView
+from django.views.generic import TemplateView
+from resume.models import Contact
+from resume.form import ContactModelForm
+from django.http import HttpResponseRedirect, Http404, JsonResponse
+from django_mysql.models import ListF
+from django_mysql.models.functions import *
 # Create your views here.
 
 class AboutMe(TemplateView):
@@ -8,5 +13,67 @@ class AboutMe(TemplateView):
 class Resume(TemplateView):
     template_name = 'resume/resume.html'
 
-class Contact(TemplateView):
+class ContactView(TemplateView):
     template_name = 'resume/contact.html'
+
+
+# Ajax send Email Handling
+
+def validateEmail(email):
+    from django.core.validators import validate_email
+    from django.core.exceptions import ValidationError
+    try:
+        validate_email( email )
+        return True
+    except ValidationError:
+        return False
+
+
+def sendEmail(request):
+    if request.is_ajax() and request.method == 'POST':
+
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        # form = Contact()
+        # form.name = name
+        # form.email = email
+        # form.subject = subject
+        # form.message = message
+
+        if name and email and subject and message:
+            if validateEmail(email):
+                if Contact.objects.all().filter(email__iexact=email):
+                    currentContact = Contact.objects.get(email__iexact=email)
+                    currentContact.subject = subject
+                    currentContact.message = message
+                    currentContact.messageList.append(subject+'|'+message)
+                    currentContact.save()
+                    if currentContact.count >=3:
+                        Contact.objects.all().filter(email__iexact=email).update( messageList=ListF('messageList').popleft() )
+                    else:
+                        currentContact.count = currentContact.count + 1
+                        currentContact.save()
+                else:
+                    currentContact = Contact()
+                    currentContact.name = name
+                    currentContact.email = email
+                    currentContact.subject = subject
+                    currentContact.message = message
+                    currentContact.count = 0
+                    currentContact.messageList.append(subject+'|'+message)
+                    currentContact.count = currentContact.count + 1
+                    currentContact.save()
+
+                data = {'status': 'good'}
+                return JsonResponse(data)
+
+            else:
+                data = data = {'status': 'Invalid email. Please verify your email and resubmit. thanks!'}
+                return JsonResponse(data)
+        else:
+            data = {'status': 'Please verify the fields and try again, thanks!'}
+            return JsonResponse(data)
+    else:
+        raise Http404
