@@ -1,4 +1,10 @@
-
+body{
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+  padding-bottom: 2em;
+  min-height: 100%;
+}
 /*Nav bar styling*/
 .navig .topbar .active > a{
   background-color: #fff;
