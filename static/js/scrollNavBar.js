@@ -43,7 +43,7 @@ $(document).ready(function() {
         $(this).css(cssImgOffXs);
       })
     }
-  })
+  }).resize();
 
   $( window ).resize(function() {
     if( $(window).width() ) {
