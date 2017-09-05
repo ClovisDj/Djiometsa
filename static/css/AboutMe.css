@@ -1,6 +1,3 @@
-body{
-  margin: 0;
-}
 
 /*canvas header block */
 canvas{
@@ -99,7 +96,7 @@ canvas{
 /*main styling*/
 .main{
   position: static;
-  margin-top: 100px;
+  margin-top: 100px !important;
   margin-bottom: 50px;
 }
 .container{
