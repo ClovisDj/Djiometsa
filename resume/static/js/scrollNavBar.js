@@ -36,17 +36,19 @@ $(document).ready(function() {
   })
 
   $( window ).resize(function() {
-    if( $(window).width() ) {
-      $('canvas').css("width", $(window).width());
-      $('canvas').css("height", $(window).height()*2/5);
-    }
-
     if ( $(window).width() < 601 ) {
       $('.media-left>#clo').hover(function(){
         $(this).css(cssImgOnXs);
       }, function() {
         $(this).css(cssImgOffXs);
       })
+    }
+  })
+
+  $( window ).resize(function() {
+    if( $(window).width() ) {
+      $('canvas').css("width", $(window).width());
+      $('canvas').css("height", $(window).height()*2/5);
     }
   }).resize();
 
