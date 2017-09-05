@@ -23,6 +23,15 @@ $(document).ready(function() {
       $('#status').text('');
     }
   })
+
+  $( window ).resize(function() {
+    if ( $(window).width() < 601 ) {
+      $('#message').attr("rows",'9');
+    }else {
+      $('#message').attr("rows",'10');
+    }
+  }).resize();
+
 })
 
 // Ajax POST
@@ -43,9 +52,6 @@ $(document).ready(function() {
       dataType: "json",
       data: data,
       success: function(data) {
-
-        console.log(data);
-
         if (data['status'] === 'good') {
           $('#status').text("Message Successfully Delivered, thank you I will be reaching you out very soon.");
           $('#status').css('color','green');

@@ -168,8 +168,8 @@ body{
   box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5);
 }
 
-.emailForm{
-  background-color: #CCCCCE;
+#emailText .emailForm{
+  background-color: #e5e5e5;
   width: inherit;
   height: 500px;
   position: fixed;
@@ -181,6 +181,12 @@ body{
   box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5);
   z-index: 4000;
 
+}
+
+@media screen and (max-width: 600px){
+  #emailText .emailForm{
+    height: 450px;
+  }
 }
 
 .emailForm #closeButton{

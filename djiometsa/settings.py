@@ -25,7 +25,7 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = 'a0)ieov$g_ni&--gb+zzu=!j#0#1pbaob8y-7r)#z0e4+-@ou)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'www.dnclovis.com',

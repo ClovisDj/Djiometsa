@@ -29,6 +29,7 @@ canvas{
   display: block;
   float: left;
   border-radius: 10px;
+  width: 150px;
 }
 
 .head .col-xs-12{
@@ -36,7 +37,7 @@ canvas{
   padding: 0;
 }
 
-@media (min-width: 900px){
+@media screen and (min-width: 900px){
   .head .media .media-left{
     padding: 3.2em 0 0 15em;
   }
@@ -45,12 +46,27 @@ canvas{
   }
 }
 
-@media (max-width: 900px){
+@media screen and (max-width: 900px){
   .head .media .media-left{
     padding: 3.2em 0 0 1em;
   }
   .head .media .media-body{
-    padding: 2.5em 1em 0 0;
+    padding: 2.5em 2em 0 0;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .head .media .media-body{
+    font-size: 55%;
+  }
+  .head .media .media-body > h2, .head .media .media-body > h3{
+    font-size: 250%;
+  }
+  .head .media .media-left{
+    padding: 1.7em 0 0 1em;
+  }
+  #clo{
+    width: 80px;
   }
 }
 
@@ -85,6 +101,15 @@ canvas{
   position: static;
   margin-top: 100px;
   margin-bottom: 50px;
+}
+.container{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.main .col-xs-12{
+  padding-left: 10px !important;
+  padding-right: 10px !important;
 }
 
 .main .col-xs-12 .jumbotron{

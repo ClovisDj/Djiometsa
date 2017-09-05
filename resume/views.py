@@ -57,7 +57,7 @@ def sendEmail(request):
                 msg = EmailMultiAlternatives(subject_autoreply, html_autoReply, from_email, [email])
                 msg.attach_alternative(html_autoReply, "text/html")
                 msg.send()
-                msg_toMe = EmailMultiAlternatives(subject, 'From: '+email+': '+message, from_email, [from_email])
+                msg_toMe = EmailMultiAlternatives(subject, 'From: '+name+', '+email+': '+message, from_email, [from_email])
                 msg_toMe.send()
 
                 data = {'status': 'good'}

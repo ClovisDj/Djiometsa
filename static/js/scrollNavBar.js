@@ -5,12 +5,9 @@ $(document).ready(function() {
 
   var myTimeout;
   $('.media-body').mouseenter(function() {
-    // myTimeout = setTimeout(function() {
       $('.media-body>h1').text("Clovis Djiometsa Ngnitewe").hide();
       $('.media-body>h1').show();
-      // }, 500);
     }).mouseleave(function() {
-        // clearTimeout(myTimeout);
         $('.media-body>h1').html("<code>{</code>Clovis_Djiometsa<code>}</code>").hide();
         $('.media-body>h1').show();
       });
@@ -23,6 +20,15 @@ $(document).ready(function() {
     width: 150,
     transition: 'width 1s ease'
   };
+  var cssImgOnXs = {
+    width: 150,
+    transition: 'width 1s ease'
+  };
+  var cssImgOffXs = {
+    width: 80,
+    transition: 'width 1s ease'
+  };
+
   $('.media-left>#clo').hover(function(){
     $(this).css(cssImgOn);
   }, function() {
@@ -33,6 +39,14 @@ $(document).ready(function() {
     if( $(window).width() ) {
       $('canvas').css("width", $(window).width());
       $('canvas').css("height", $(window).height()*2/5);
+    }
+
+    if ( $(window).width() < 601 ) {
+      $('.media-left>#clo').hover(function(){
+        $(this).css(cssImgOnXs);
+      }, function() {
+        $(this).css(cssImgOffXs);
+      })
     }
   }).resize();
 
