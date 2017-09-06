@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 
-  $('.main').css('margin-top', $("canvas").height());
+  $('.main').css('margin-top', $("canvas").height()*2/5);
 
   var myTimeout;
   $('.media-body').mouseenter(function() {
