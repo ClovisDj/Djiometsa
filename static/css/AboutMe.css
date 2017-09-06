@@ -96,7 +96,7 @@ canvas{
 /*main styling*/
 .main{
   position: static;
-  margin-top: 100px !important;
+  /*margin-top: 100px !important;*/
   margin-bottom: 50px;
 }
 .container{
