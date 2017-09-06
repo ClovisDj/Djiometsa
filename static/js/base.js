@@ -26,7 +26,7 @@ $(document).ready(function() {
 
   $( window ).resize(function() {
     if ( $(window).width() < 601 ) {
-      $('#message').attr("rows",'9');
+      $('#message').attr("rows",'8');
     }else {
       $('#message').attr("rows",'10');
     }
