@@ -154,7 +154,7 @@ body{
   width: auto;
   height: 50px;
   position: fixed;
-  right: 10px;
+  right: 20px;
   bottom: 30px;
   margin: 0;
   padding: 0;
@@ -175,7 +175,7 @@ body{
   width: inherit;
   height: 500px;
   position: fixed;
-  right: 10px;
+  right: 20px;
   bottom: 46px;
   margin: 0;
   padding: 15px;

@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 
-  $('.main').css('margin-top', $("#animation").height()-$(".head").height() +50);
+  $('.main').css('margin-top', $("canvas").height()*6/5);
 
   var myTimeout;
   $('.media-body').mouseenter(function() {
@@ -20,14 +20,17 @@ $(document).ready(function() {
     width: 150,
     transition: 'width 1s ease'
   };
-  var cssImgOnXs = {
-    width: 150,
-    transition: 'width 1s ease'
-  };
-  var cssImgOffXs = {
-    width: 80,
-    transition: 'width 1s ease'
-  };
+
+  if ($(window).width() < 601) {
+     cssImgOn = {
+      width: 150,
+      transition: 'width 1s ease'
+    };
+    cssImgOff = {
+      width: 80,
+      transition: 'width 1s ease'
+    };
+  }
 
   $('.media-left>#clo').hover(function(){
     $(this).css(cssImgOn);
@@ -36,19 +39,16 @@ $(document).ready(function() {
   })
 
   $( window ).resize(function() {
+    if( $(window).width() ) {
+      $('canvas').css("width", $(window).width());
+      $('canvas').css("height", $(window).height()*2/5);
+    }
     if ( $(window).width() < 601 ) {
       $('.media-left>#clo').hover(function(){
         $(this).css(cssImgOnXs);
       }, function() {
         $(this).css(cssImgOffXs);
       })
-    }
-  }).resize();
-
-  $( window ).resize(function() {
-    if( $(window).width() ) {
-      $('canvas').css("width", $(window).width());
-      $('canvas').css("height", $(window).height()*2/5);
     }
   }).resize();
 
