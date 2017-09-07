@@ -21,8 +21,8 @@
 }
 
 .main .col-xs-12{
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
 }
 
 .container{
