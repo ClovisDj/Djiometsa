@@ -1,5 +1,5 @@
 from django.db import models
-from django_mysql.models import ListCharField, JSONField
+# from django_mysql.models import ListCharField, JSONField
 # Create your models here.
 
 class Contact(models.Model):

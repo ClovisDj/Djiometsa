@@ -25,12 +25,14 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = 'a0)ieov$g_ni&--gb+zzu=!j#0#1pbaob8y-7r)#z0e4+-@ou)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'www.dnclovis.com',
     'clovis-env.us-west-2.elasticbeanstalk.com',
-    'dnclovis.com'
+    'dnclovis.com',
+    'localhost',
+    '127.0.0.1'
 ]
 
 
@@ -57,7 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'resume',
-    'django_mysql',
+    # 'django_mysql',
 ]
 
 MIDDLEWARE = [
@@ -113,16 +115,16 @@ WSGI_APPLICATION = 'djiometsa.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Dnclovis_Db',
-        'USER': 'DjiometsaResume',
-        'PASSWORD': '&MySiteDb*Clo',
-        'HOST': 'resumedb.cqtmej9hyamw.us-west-2.rds.amazonaws.com',
-        'PORT': '3306',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'Dnclovis_Db',
+#         'USER': 'DjiometsaResume',
+#         'PASSWORD': '&MySiteDb*Clo',
+#         'HOST': 'resumedb.cqtmej9hyamw.us-west-2.rds.amazonaws.com',
+#         'PORT': '3306',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

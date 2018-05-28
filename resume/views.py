@@ -3,12 +3,15 @@ from django.views.generic import TemplateView
 from resume.models import Contact
 from django.http import HttpResponseRedirect, Http404, JsonResponse
 from django.core.mail import send_mail, EmailMessage, EmailMultiAlternatives
+import sys
 # Create your views here.
 
 class AboutMe(TemplateView):
+    print(sys.argv)
     template_name = 'resume/AboutMe.html'
 
 class Resume(TemplateView):
+    print(sys.argv)
     template_name = 'resume/resume.html'
 
 class ContactView(TemplateView):

@@ -3,3 +3,9 @@
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+# All pyc files
+*.pyc
+../*.pyc
+resume/__pycache__
+__pycache__
