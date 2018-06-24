@@ -13,7 +13,7 @@ canvas{
   top: 0;
   left: 0;
   width: 100%;
-  height: inherit;
+  max-height: 380px;
   margin-bottom: 0;
   z-index: 500;
 }
@@ -63,7 +63,7 @@ canvas{
     padding: 1.7em 0 0 1em;
   }
   #clo{
-    width: 80px !important;
+    width: 130px !important;
   }
 }
 

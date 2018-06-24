@@ -1,0 +1,257 @@
+/*body styling*/
+html{
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+  padding-bottom: 2em;
+  min-height: 100%;
+}
+
+/*navivation bar*/
+.navig{
+  position: fixed;
+  top: 0px;
+  z-index: 55;
+}
+.navig .nav-sub{
+  overflow: hidden;
+  height: 50px;
+}
+
+.navig .topbar{
+  background-color: rgba(0, 104, 178, 1) !important;
+  list-style-type: none;
+  margin: 0;
+  padding: 0 8px;
+  overflow: hidden;
+  position: fixed !important;
+  top: 0 !important;
+  width: 100%;
+  height: inherit;
+  display: block;
+  box-sizing: border-box;
+}
+
+.topbar > li {
+  float: left;
+  height: inherit;
+}
+
+.topbar #contact, .topbar #resume{
+  float: right;
+}
+.topbar > li > a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 11px 15px 12px 15px;
+  text-decoration: none;
+  font-family: 'EB Garamond', serif;
+  font-size: 140%;
+  font-weight: 550;
+}
+
+.navig .topbar> li > a, .navig > a {
+  color: #fff;
+}
+
+.navig .topbar > li > a{
+  position: relative;
+  display: block;
+  width: auto;
+  height: auto;
+  text-align: center ;
+  border-top-left-radius: 3.8em 3em;
+  border-top-right-radius: 1.6em;
+}
+
+.navig .topbar > #brand{
+  font-size: 135%;
+  font-weight: 550;
+}
+
+.navig .topbar > #brand > a{
+  width: auto;
+  height: auto;
+  padding: 3px 6px 2px 6px;
+}
+
+.navig .topbar #brand code{
+  background-color: inherit;
+  color: #ea5900;
+  font-size: 120%;
+}
+
+.navig .topbar > #resume:hover, .navig .topbar > #contact:hover{
+  padding-top: 7px;
+  transition: all 0.5s ease-in;
+}
+
+.navig .topbar #resume > a:hover, .navig .topbar #contact > a:hover{
+  display: block;
+  text-decoration: none;
+  background-color: #fff;
+  color: #0068B2;
+  font-weight: 500;
+  font-size: 130%;
+  height: auto;
+  padding: 11px 15px 8px 15px;
+  transition: all 0.5s ease-in;
+}
+
+/* Small mobile devices */
+@media (max-width: 320px){
+  .navig .topbar > li a{
+    font-size: 17px;
+  }
+  .navig .topbar > #brand > a{
+    font-size: 22px;
+  }
+}
+/*End navigation bar*/
+
+/*footer styling*/
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0px;
+  background-color: #010921;
+  text-align: center;
+}
+
+.footer .row{
+  position: relative;
+}
+
+.footer .row .media-body h5{
+  display: block;
+  margin: 0 auto;
+  text-align: right;
+  color: #FFF;
+}
+
+.footer .row .media-body{
+  padding: 8px;
+}
+
+.footer .row .media .media-right{
+  padding: 8px 5px 3px 5px;
+}
+
+.footer .row .media .media-right img{
+  height: 15px;
+  width: 30px;
+}
+
+/*Email Me Styling*/
+.email{
+  width: auto;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  margin: 0;
+  padding: 0;
+  z-index: 5000;
+
+}
+
+.email > p{
+  background-color: #0068B2 !important;
+  padding: 5px 10px;
+  width: inherit;
+  border: none;
+  box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5);
+}
+
+#emailText{
+  margin: 0 50px;
+}
+
+#emailText .emailForm{
+  background-color: #e5e5e5;
+  width: inherit;
+  max-height: 700px;
+  position: fixed;
+  right: 20px;
+  bottom: 46px;
+  margin: 0;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5);
+  z-index: 4000;
+
+}
+
+#captcha_wrap{
+  padding: 0 15px !important;
+}
+
+#send_button{
+  float: left !important;
+  padding-top: 5px;
+}
+
+@media screen and (max-width: 600px){
+  #emailText .emailForm{
+    max-height: 500px;
+    right: 23px;
+    padding: 10px;
+  }
+  .emailForm #closeButton button{
+    font-size: 15px;
+    padding: 0px 4px;
+    margin: -45px 0 0 -5px !important;
+    border-radius: 10px;
+    color: #fff;
+  }
+  #captcha_wrap{
+    padding: 0 10px;
+  }
+  #emailText .emailForm{
+    right: 15px;
+    bottom: 40px;
+  }
+}
+
+.emailForm #closeButton{
+  height: 0;
+  margin: 0;
+  float: left;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
+.emailForm #closeButton button{
+  font-size: 15px;
+  padding: 0px 4px;
+  margin: -52px 0 0 -10px;
+  border-radius: 30px;
+  color: #fff;
+}
+
+.emailForm .form-group{
+  margin-bottom: 10px;
+}
+
+.emailForm #send{
+  float: right;
+}
+
+/*End Email*/

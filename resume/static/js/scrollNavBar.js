@@ -1,7 +1,10 @@
 
 $(document).ready(function() {
 
-  $('.main').css('margin-top', $("canvas").height()*2/5);
+  windowHeight = $(window).height();
+  $('.head').css({'padding-bottom': windowHeight/8 + 'px'});
+
+  // $('.main').css('margin-top', $("canvas").height()*2/5);
 
   var myTimeout;
   $('.media-body').mouseenter(function() {
@@ -24,10 +27,11 @@ $(document).ready(function() {
   if ($(window).width() < 601) {
      cssImgOn = {
       width: 150,
-      transition: 'width 1s ease'
+      transition: 'width 1s ease',
     };
     cssImgOff = {
       width: 80,
+      "padding-bottom": '200',
       transition: 'width 1s ease'
     };
   }
@@ -38,12 +42,6 @@ $(document).ready(function() {
     $(this).css(cssImgOff);
   })
 
-  $( window ).resize(function() {
-    if( $(window).width() ) {
-      $('canvas').css("width", $(window).width());
-      $('canvas').css("height", $(window).height()*2/5);
-    }
-  }).resize();
 
   $('#myMap,#duomo,#montreal,#austin').click(function() {
     $(this).parent().removeClass('col-md-6').removeClass('col-md-offset-6').addClass('col-md-12');

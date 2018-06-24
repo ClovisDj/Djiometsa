@@ -15,7 +15,7 @@ var ctx = canvas.getContext('2d');
 var W = window.innerWidth, H = window.innerHeight, linesListRight = [], linesListLeft = [];
 var v = 1, mp = [0.03,-0.03, -0.05, 0.05, -0.07, 0.07], linesNum = 50, alphaParam = 10;
 canvas.width = W;
-canvas.height = H*2/5;
+canvas.height = H*1/3;
 
 function paintOnCanvas(){
 

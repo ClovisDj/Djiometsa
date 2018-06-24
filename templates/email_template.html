@@ -1,0 +1,70 @@
+{% load staticfiles %}
+
+<div class="email">
+  <p class="btn btn-info btn-lg">
+    <span class="glyphicon glyphicon-envelope"></span> Email Me
+  </p>
+</div>
+
+<div id="emailText" class="row hidden">
+  <div class="col-xs-11 col-sm-6 col-md-4">
+    <div class="emailForm">
+      <div class="row">
+        <p id="closeButton"><button type="button" class="btn btn-danger">&#10005;</button></p>
+      </div>
+      <form id="form" method="POST">
+        {% csrf_token %}
+        {{ contact.non_field_errors }}
+
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="form-group">
+              {{ contact.name.errors }}
+              <label for="{{ contact.name.label }}">{{ contact.name.label|title }}</label>
+              {{ contact.name }}
+            </div>
+          </div>
+          <div class="col-xs-6" style="text-align: right;">
+            <div class="form-group">
+              <label style="float: left;" for="{{ contact.email.label }}">{{ contact.email.label|title }}</label>
+              {{ contact.email }}
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="{{ contact.subject.label }}">{{ contact.subject.label|title }}</label>
+              {{ contact.subject }}
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="{{ contact.message.label }}">{{ contact.message.label|title }}</label>
+              {{ contact.message }}
+            </div>
+          </div>
+        </div>
+        <div class="row" id='captcha_wrap'>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="g-recaptcha" data-sitekey="6LdUUDoUAAAAAEMTJ46cu4G2cQNVMMtAnYUoQwqp"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-4" id="send_button">
+              <button id="send" type="submit" class="btn btn-primary pull-left">Send</button>
+            </div>
+            <div class="col-xs-8">
+              <p id="status"></p>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
