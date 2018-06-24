@@ -7,15 +7,25 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
-CLEF_REL_PATH = 'djiometsa/data/clef.json'
-CLEF_PATH = os.path.join(BASE_DIR, CLEF_REL_PATH)
+CLEF_NAME = 'clef.json'
+CLEF_REL_PATH = 'djiometsa/data/{}'
+ROOT_CLEF = '/home/data/{}'
+CLEF_REL_PATH = os.path.join(BASE_DIR, CLEF_REL_PATH)
+
+
+def dev_settings():
+    return 'runserver' in sys.argv
+
+
+if dev_settings():
+    CLEF_PATH = os.path.join(BASE_DIR, CLEF_REL_PATH.format(CLEF_NAME))
+else:
+    CLEF_PATH = ROOT_CLEF.format(CLEF_NAME)
+
 
 clef = {}
 with open(CLEF_PATH, mode='r') as j_clef:
     clef.update(json.load(j_clef))
-
-def dev_settings():
-    return 'runserver' in sys.argv
 
 
 if dev_settings():
