@@ -33,20 +33,21 @@ if dev_settings():
         from djiometsa.dev_settings import *
     except ImportError:
         sys.exit('Error: Missing dev_settings module')
+
+    CSRF_COOKIE_SECURE = False
+    SESSION_COOKIE_SECURE = False
+    SECURE_SSL_REDIRECT = False
 else:
-    DEBUG = False
+    FalseCSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     ALLOWED_HOSTS = clef['allowed_hosts']
 
 
 SECRET_KEY = clef['django_key']
 GOOGLE_RECAPTCHA_KEY = clef['recaptcha']
-
-
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Email settings
@@ -57,13 +58,6 @@ EMAIL_HOST_USER = clef['email_host_user']
 EMAIL_HOST_PASSWORD = clef['email_host_pass']
 EMAIL_USE_TLS = True
 
-# Database settings
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': ':memory:',
-    }
-}
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
