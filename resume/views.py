@@ -51,7 +51,6 @@ class ContactView(BaseContact):
 
 
 def recaptcha_validation(captcha_token):
-    # recaptcha_response = request.POST.get('recaptcha')
     data = {
     'secret': settings.GOOGLE_RECAPTCHA_KEY,
     'response': captcha_token
