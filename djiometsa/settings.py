@@ -9,7 +9,7 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 CLEF_NAME = 'clef.json'
 CLEF_REL_PATH = 'djiometsa/data/{}'
-ROOT_CLEF = '/home/data/{}'
+ROOT_CLEF = '/home/clovis/data/{}'
 CLEF_REL_PATH = os.path.join(BASE_DIR, CLEF_REL_PATH)
 
 
