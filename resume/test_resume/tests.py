@@ -2,7 +2,6 @@ from copy import deepcopy
 import json
 from django.test import TestCase
 from django.test.client import Client
-from resume.views import send_mail
 
 
 class TestEmail(TestCase):
