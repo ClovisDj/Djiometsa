@@ -24,6 +24,7 @@ SECRET_KEY = clef['django_key']
 
 # Recaptcha Key
 GOOGLE_RECAPTCHA_KEY = clef['recaptcha']
+GOOGLE_RECAPTCHA_HTML = clef['recaptchaHtml']
 
 # Email settings
 EMAIL_BACKEND = clef['email_backend']
