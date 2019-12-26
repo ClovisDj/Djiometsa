@@ -1,0 +1,7 @@
+#!/bin/bash
+
+bin/make_virtualenv
+
+source $(pwd)/.virtualenv/bin/activate
+
+python3 $(pwd)/manage.py runserver 0.0.0.0:8080
