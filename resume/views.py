@@ -39,6 +39,16 @@ class AboutMe(BaseContact):
 class Resume(BaseContact):
     template_name = RESUME_TEMPLATE
 
+    def get(self, request, *args, **kwargs):
+        import pdfkit
+
+        template = render_to_string('resume/resume_pdf.html')
+        # print(f">>>>>>> Template: {template}")
+        css = ['./resume/static/css/base.css', './resume/static/css/resumePdf.css']
+        pdfkit.from_string(template, './resume/static/resume/resume.pdf', css=css)
+
+        return super().get(request, *args, **kwargs)
+
 
 class ContactView(BaseContact):
     template_name = CONTACT_ME_TEMPLATE

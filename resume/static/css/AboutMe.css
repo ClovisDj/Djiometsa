@@ -137,13 +137,23 @@ canvas{
   border-bottom: 3px solid rgba(0, 104, 178, 0.7);
 }
 
+.main .col-xs-12 .jumbotron > #cleveland{
+  width: 185px;
+  border-bottom: 3px solid rgba(0, 104, 178, 0.7);
+}
+
+.main .col-xs-12 .jumbotron > #greenville{
+  width: 165px;
+  border-bottom: 3px solid rgba(0, 104, 178, 0.7);
+}
+
 #myMap{
   margin-bottom: 30px;
   border-radius: 10px;
   box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5) !important;
 }
 
-#duomo, #montreal, #austin{
+#duomo, #montreal, #austin, #clev, #greenv{
   border-radius: 10px;
   margin-bottom: 30px;
   box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5) !important;

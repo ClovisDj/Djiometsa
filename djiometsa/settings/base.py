@@ -7,8 +7,6 @@ CLEF_NAME = 'clef.json'
 
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
-
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -35,7 +33,10 @@ ROOT_URLCONF = 'djiometsa.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR],
+        'DIRS': [
+            TEMPLATE_DIR,
+            'resume/templates/resume'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'debug': True,
@@ -65,4 +66,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "resume/static")
+STATIC_DIR = [
+    os.path.join(BASE_DIR, 'resume/static'),
+
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
