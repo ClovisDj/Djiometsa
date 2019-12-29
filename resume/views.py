@@ -2,7 +2,7 @@ from django.conf import settings
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.http import JsonResponse, HttpResponseBadRequest
-from django.core.mail import send_mail, EmailMultiAlternatives
+from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from resume.forms import ContactForm
 from django.utils.decorators import method_decorator
@@ -39,22 +39,12 @@ class AboutMe(BaseContact):
 class Resume(BaseContact):
     template_name = RESUME_TEMPLATE
 
-    def get(self, request, *args, **kwargs):
-        import pdfkit
-
-        template = render_to_string('resume/resume_pdf.html')
-        # print(f">>>>>>> Template: {template}")
-        css = ['./resume/static/css/base.css', './resume/static/css/resumePdf.css']
-        pdfkit.from_string(template, './resume/static/resume/resume.pdf', css=css)
-
-        return super().get(request, *args, **kwargs)
-
 
 class ContactView(BaseContact):
     template_name = CONTACT_ME_TEMPLATE
 
 
-def send_mail(email_from, subject, email_template, email_context, to_email=None):
+def send_email(email_from, subject, email_template, email_context, to_email=None):
     """
     Generic send email method
     :email_from -> email type ex. email@example.com
@@ -84,12 +74,12 @@ def send_email(request):
             to_email = [form.cleaned_data.get('email'), ]
             context = {'name': form.cleaned_data.get('name')}
             subject_autoreply = 'Thank you, ' + context['name'].title() + ' for your message.'
-            send_mail(from_email, subject_autoreply, EMAIL_AUTO_REPLAY_TEMPLATE, context, to_email=to_email)
+            send_email(from_email, subject_autoreply, EMAIL_AUTO_REPLAY_TEMPLATE, context, to_email=to_email)
 
             # Forwarding incoming message.
             context = {'message': form.cleaned_data.get('message').strip(), 'from': to_email[0]}
             subject = form.cleaned_data.get('subject')
-            send_mail(from_email, subject, EMAIL_FORWARDING_TEMPLATE, context, to_email=['clovis@dnclovis.com', ])
+            send_email(from_email, subject, EMAIL_FORWARDING_TEMPLATE, context, to_email=['clovis@dnclovis.com', ])
 
             data = {'status': 'good'}
             return JsonResponse(data, status=200)
