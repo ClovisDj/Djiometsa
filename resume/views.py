@@ -53,7 +53,8 @@ class BaseContact(TemplateView):
         return render(
             request,
             self.template_name,
-            {'contact': ContactForm(), 'recaptcha': settings.GOOGLE_RECAPTCHA_HTML, 'skills': SkillSet()}
+            self.get_context_data(contact=ContactForm(), recaptcha=settings.GOOGLE_RECAPTCHA_HTML, skills=SkillSet(),
+                                  resume=False)
         )
 
 
@@ -63,13 +64,14 @@ class AboutMe(BaseContact):
 
 class Resume(BaseContact):
     template_name = RESUME_TEMPLATE
+    extra_context = {'resume': True}
 
 
 class ContactView(BaseContact):
     template_name = CONTACT_ME_TEMPLATE
 
 
-def send_email(email_from, subject, email_template, email_context, to_email=None):
+def send_email_message(email_from, subject, email_template, email_context, to_email=None):
     """
     Generic send email method
     :email_from -> email type ex. email@example.com
@@ -99,12 +101,13 @@ def send_email(request):
             to_email = [form.cleaned_data.get('email'), ]
             context = {'name': form.cleaned_data.get('name')}
             subject_autoreply = 'Thank you, ' + context['name'].title() + ' for your message.'
-            send_email(from_email, subject_autoreply, EMAIL_AUTO_REPLAY_TEMPLATE, context, to_email=to_email)
+            send_email_message(from_email, subject_autoreply, EMAIL_AUTO_REPLAY_TEMPLATE, context, to_email=to_email)
 
             # Forwarding incoming message.
             context = {'message': form.cleaned_data.get('message').strip(), 'from': to_email[0]}
             subject = form.cleaned_data.get('subject')
-            send_email(from_email, subject, EMAIL_FORWARDING_TEMPLATE, context, to_email=['clovis@dnclovis.com', ])
+            send_email_message(from_email, subject, EMAIL_FORWARDING_TEMPLATE, context,
+                               to_email=['clovis@dnclovis.com', ])
 
             data = {'status': 'good'}
             return JsonResponse(data, status=200)

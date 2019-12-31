@@ -126,4 +126,19 @@
   border-bottom: 3px solid rgba(0, 104, 178, 0.7);
 }
 
+.pdfLink {
+  width: auto;
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  margin: 0;
+  padding: 0;
+  z-index: 4000;
+}
+
+.pdfLink > p {
+  border-radius: 20px;
+  box-shadow: 5px 8px 15px 0px rgba(0,0,0,0.5);
+}
+
 /*End main*/

@@ -65,4 +65,4 @@ class ContactForm(forms.Form):
         if not success:
             raise forms.ValidationError('Invalid recaptcha!')
 
-        return True
+        # return True

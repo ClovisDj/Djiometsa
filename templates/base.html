@@ -18,6 +18,7 @@
 
     {% endblock %}
   </head>
+
   <body>
     <div class="navig">
       <div class="nav-sub">
@@ -27,21 +28,22 @@
           <li id="resume" {% block ClassName2 %} {% endblock %}><a href="{% url 'resume' %}">Resume</a></li>
         </ul>
       </div>
-
     </div>
+
     {% block body %}
 
     {% endblock %}
 
+    {% include "email_template.html" %}
 
-{% include "email_template.html" %}
-
-{% include "footer.html" %}
+    {% include "footer.html" %}
 
     <script type="text/javascript" src="{% static 'js/cookie.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+
     {% block javascript %}
 
     {% endblock %}
-</body>
+
+  </body>
 </html>

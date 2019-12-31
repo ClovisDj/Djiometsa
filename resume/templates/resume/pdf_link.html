@@ -1,0 +1,8 @@
+{% load staticfiles %}
+
+<div class="{% if resume %} pdfLink {% else %} hidden {% endif %}">
+  <p>
+      <a href="{% static 'resume/resume.pdf' %}" class="button" target="_blank">
+          <img src="{% static 'logo/pdf.png' %}" title="Download Pdf Version" height="80" /></a>
+  </p>
+</div>
