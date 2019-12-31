@@ -18,5 +18,5 @@ def run():
         f'{css_dir}/base.css',
         f'{css_dir}/resumePdf.css'
     ]
-
+    print(f'{template}')
     pdfkit.from_string(template, f'{pdf_resume_dir}/resume.pdf', css=css)
