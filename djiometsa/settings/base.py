@@ -36,7 +36,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             TEMPLATE_DIR,
-            'resume/templates/resume'
+            'resume/templates/resume',
+            'resume/templates/resume/components',
         ],
         'APP_DIRS': True,
         'OPTIONS': {

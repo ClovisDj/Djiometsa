@@ -1,0 +1,12 @@
+{% for skill_set in skills.mobile_skills %}
+
+<div class="row">
+    {% for skill in skill_set %}
+      <div class="col-xs-3">
+        <p><span style="color: #0068B2;">&#8250;</span> {{ skill }}</p>
+      </div>
+    {% endfor %}
+
+</div>
+
+{% endfor %}

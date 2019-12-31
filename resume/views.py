@@ -17,6 +17,30 @@ EMAIL_AUTO_REPLAY_TEMPLATE = 'resume/auto_reply_email.html'
 EMAIL_FORWARDING_TEMPLATE = 'resume/email_received.html'
 
 
+class SkillSet:
+    _instance = None
+
+    class _Skills:
+        def __init__(self):
+            self.skills_set = ['Python', 'TypeScript', 'Ruby', 'Javascript', 'Html', 'Css', 'Jquery', 'Django',
+                               'NodeJs', 'AngularJs', 'RESTful', 'Sql', 'PostgreSql', 'MySql', 'MongoDB', 'Git',
+                               'GitHub', 'CircleCi', 'CI/CD', 'Jira', 'Aws', 'Ubuntu', 'Docker', ]
+
+            self.mobile_skills = self.get_chunks(self.skills_set, 3)
+            self.desktop_skills = self.get_chunks(self.skills_set, 4)
+
+        def get_chunks(self, skills, size):
+            to_chunks = []
+            for i in range(0, len(skills), size):
+                to_chunks.append(list(skills[i:i + size]))
+            return to_chunks
+
+    def __new__(cls):
+        if not cls._instance:
+            cls._instance = cls._Skills()
+        return cls._instance
+
+
 class BaseContact(TemplateView):
     """
     Base contact view from which all other view with contact lightbox will inherit from.
@@ -28,7 +52,7 @@ class BaseContact(TemplateView):
         return render(
             request,
             self.template_name,
-            {'contact': ContactForm(), 'recaptcha': settings.GOOGLE_RECAPTCHA_HTML}
+            {'contact': ContactForm(), 'recaptcha': settings.GOOGLE_RECAPTCHA_HTML, 'skills': SkillSet()}
         )
 
 

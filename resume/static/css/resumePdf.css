@@ -1,22 +1,8 @@
-
-/*Nav bar styling*/
-.navig .topbar .active > a{
-  background-color: #fff;
-  color: #0068B2;
-  font-weight: 500;
-  font-size: 130%;
-  padding: 11px 15px 7px 15px;
-}
-
-.navig .topbar > #resume{
-  padding-top: 7px;
-}
-/*End Nav bar*/
-
 /*main styling*/
 .main{
-  margin-top: 80px;
-  margin-bottom: 50px;
+  background-color: #fff !important;
+  margin-top: 0;
+  margin-bottom: 0 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
@@ -35,13 +21,7 @@
   font-family: 'EB Garamond', serif !important;
   font-size: 10px;
   padding: 30px 30px;
-  background-color: #fff;
-}
-
-@media screen and (max-width: 600px){
-  .main .col-xs-12 .jumbotron{
-    padding: 30px 20px;
-  }
+  background-color: #fff !important;
 }
 
 .main .col-xs-12 .jumbotron .header > h3, .main .col-xs-12 .jumbotron .header > h4{
@@ -63,7 +43,7 @@
 }
 
 .main .col-xs-12 .jumbotron .summary > h3{
-  width: 270px;
+  width: 175px;
   padding-bottom: 5px;
   margin-top: 50px;
   border-bottom: 3px solid rgba(0, 104, 178, 0.7);
@@ -82,7 +62,7 @@
 }
 
 .main .col-xs-12 .jumbotron .experience > h3{
-  width: 225px;
+  width: 105px;
   padding-bottom: 5px;
   margin-bottom: 20px;
   border-bottom: 3px solid rgba(0, 104, 178, 0.7);
@@ -91,13 +71,19 @@
 .main .col-xs-12 .jumbotron .experience .brp{
   border-radius: 10px;
   border: 3px solid rgba(0, 104, 178, 0.7);
-  margin: 0;
+  margin-top: 15px;
 }
 
 .main .col-xs-12 .jumbotron .experience .connect4{
   border-radius: 10px;
   border: 3px solid rgba(0, 104, 178, 0.7);
   margin: 0;
+}
+
+.main .col-xs-12 .jumbotron .experience .propertyPanorama{
+  border-radius: 10px;
+  border: 3px solid rgba(0, 104, 178, 0.7);
+  margin-top: 15px;
 }
 
 .main .col-xs-12 .jumbotron .experience .djiometsa{
@@ -108,14 +94,17 @@
 
 .main .col-xs-12 .jumbotron .education > h3{
   width: 50px;
-  padding-bottom: 5px;
+  padding-bottom: 0;
   border-bottom: 3px solid rgba(0, 104, 178, 0.7);
 }
 
 .main .col-xs-12 .jumbotron .education > #education{
   width: 230px;
-  padding-bottom: 5px;
   border-bottom: 3px solid rgba(0, 104, 178, 0.7);
+}
+
+.jumbotron .tools p {
+    margin-bottom: 5px !important;
 }
 
 /*End main*/
