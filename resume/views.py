@@ -22,9 +22,10 @@ class SkillSet:
 
     class _Skills:
         def __init__(self):
-            self.skills_set = ['Python', 'TypeScript', 'Ruby', 'Javascript', 'Html', 'Css', 'Jquery', 'Django',
-                               'NodeJs', 'AngularJs', 'RESTful', 'Sql', 'PostgreSql', 'MySql', 'MongoDB', 'Git',
-                               'GitHub', 'CircleCi', 'CI/CD', 'Jira', 'Aws', 'Ubuntu', 'Docker', ]
+            self.skills_set = ('Python', 'TypeScript', 'Ruby', 'Javascript', 'Html', 'Css',
+                               'Jquery', 'Django', 'Django Rest Framework', 'NodeJs', 'AngularJs',
+                               'RESTful', 'OpenApi', 'PostgreSql', 'MySql', 'MongoDB', 'Git',
+                               'GitHub', 'CircleCi', 'CI/CD', 'Jira', 'Aws', 'Ubuntu', 'Docker', )
 
             self.mobile_skills = self.get_chunks(self.skills_set, 3)
             self.desktop_skills = self.get_chunks(self.skills_set, 4)
@@ -32,7 +33,7 @@ class SkillSet:
         def get_chunks(self, skills, size):
             to_chunks = []
             for i in range(0, len(skills), size):
-                to_chunks.append(list(skills[i:i + size]))
+                to_chunks.append(skills[i:i + size])
             return to_chunks
 
     def __new__(cls):
