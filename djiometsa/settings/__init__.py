@@ -36,5 +36,8 @@ EMAIL_USE_TLS = True
 
 if dev_settings():
     from .dev import *
+    ALLOWED_HOSTS = ['*']
 else:
     from .prod import *
+    ALLOWED_HOSTS = clef['allowed_hosts']
+
