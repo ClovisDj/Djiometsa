@@ -1,0 +1,11 @@
+{% for skill_set in skills.desktop_skills %}
+
+<div class="row">
+    {% for skill in skill_set %}
+      <div class="col-xs-3">
+        <p><span style="color: #0068B2 !important;">&#8250;</span> {{ skill }}</p>
+      </div>
+    {% endfor %}
+</div>
+
+{% endfor %}

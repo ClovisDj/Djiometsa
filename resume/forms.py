@@ -8,13 +8,16 @@ def recaptcha_validation(captcha_token):
         'secret': settings.GOOGLE_RECAPTCHA_KEY,
         'response': captcha_token
     }
-    r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
 
-    return r.json()['success']
+    response = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data).json()
+    if 'success' in response:
+        return response['success']
+
+    return False
 
 
 class ContactForm(forms.Form):
-    def __init__(self, recaptcha, *args, **kwargs):
+    def __init__(self, recaptcha=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.recaptcha = recaptcha
 
@@ -57,6 +60,9 @@ class ContactForm(forms.Form):
 
     def clean(self):
         super().clean()
+
         success = recaptcha_validation(self.recaptcha)
         if not success:
             raise forms.ValidationError('Invalid recaptcha!')
+
+        # return True

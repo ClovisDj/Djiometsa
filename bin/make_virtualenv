@@ -1,0 +1,21 @@
+#!/bin/bash
+
+VIRTUALENV_DIR=$(pwd)/.virtualenv
+
+if [ ! -f "$VIRTUALENV_DIR/bin/activate" ]; then
+
+  echo "The .virtualenv directory doesn't exists!"
+  echo "... generating the virtual environment"
+
+  python3 -m venv .virtualenv
+
+  # Await for the .virtualenv folder to be populated
+  while [ ! -f "$VIRTUALENV_DIR/bin/activate" ]; do sleep 1; done
+
+fi
+
+source "$VIRTUALENV_DIR/bin/activate"
+
+pip install -r $(pwd)/requirements.txt
+
+chmod 777 -R "$VIRTUALENV_DIR"

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+bin/make_virtualenv
+
+source $(pwd)/.virtualenv/bin/activate
+
+python3 $(pwd)/manage.py runscript pdf_resume
