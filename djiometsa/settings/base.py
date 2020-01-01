@@ -5,7 +5,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 
 CLEF_NAME = 'clef.json'
 
-TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+# TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Application definition
 INSTALLED_APPS = [
@@ -35,9 +35,9 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            TEMPLATE_DIR,
-            'resume/templates/resume',
-            'resume/templates/resume/components',
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'resume/templates/resume'),
+            os.path.join(BASE_DIR, 'resume/templates/resume/components'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
