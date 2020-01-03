@@ -53,8 +53,7 @@ class BaseContact(TemplateView):
         return render(
             request,
             self.template_name,
-            self.get_context_data(contact=ContactForm(), recaptcha=settings.GOOGLE_RECAPTCHA_HTML, skills=SkillSet(),
-                                  resume=False)
+            self.get_context_data(contact=ContactForm(), recaptcha=settings.GOOGLE_RECAPTCHA_HTML, resume=False)
         )
 
 
@@ -64,7 +63,7 @@ class AboutMe(BaseContact):
 
 class Resume(BaseContact):
     template_name = RESUME_TEMPLATE
-    extra_context = {'resume': True}
+    extra_context = {'resume': True, 'skills': SkillSet()}
 
 
 class ContactView(BaseContact):

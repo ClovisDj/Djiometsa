@@ -5,8 +5,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 
 CLEF_NAME = 'clef.json'
 
-# TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
-
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',

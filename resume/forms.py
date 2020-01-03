@@ -64,5 +64,3 @@ class ContactForm(forms.Form):
         success = recaptcha_validation(self.recaptcha)
         if not success:
             raise forms.ValidationError('Invalid recaptcha!')
-
-        # return True
