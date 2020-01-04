@@ -24,8 +24,9 @@ class SkillSet:
         def __init__(self):
             self.skills_set = ('Python', 'TypeScript', 'Ruby', 'Javascript', 'Html', 'Css',
                                'Jquery', 'Django', 'Django Rest Framework', 'NodeJs', 'AngularJs',
-                               'RESTful', 'OpenApi', 'PostgreSql', 'MySql', 'MongoDB', 'Git',
-                               'GitHub', 'CircleCi', 'CI/CD', 'Jira', 'Aws', 'Ubuntu', 'Docker', )
+                               'RESTful', 'OpenApi', 'PostgreSql', 'MySql', 'MongoDB', 'Git', 'Celery',
+                               'RabbitMQ', 'Redis', 'GitHub', 'CircleCi', 'CI/CD', 'Jira', 'Aws', 'Ubuntu',
+                               'Docker', 'RabbitMQ', )
 
             self.mobile_skills = self.get_chunks(self.skills_set, 3)
             self.desktop_skills = self.get_chunks(self.skills_set, 4)
