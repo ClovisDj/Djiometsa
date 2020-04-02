@@ -1,6 +1,8 @@
 #!/bin/bash
 
-VIRTUALENV_DIR=$(pwd)/.virtualenv
+WORKING_DIR="$(pwd)"
+
+VIRTUALENV_DIR=$WORKING_DIR/.virtualenv
 
 if [ ! -f "$VIRTUALENV_DIR/bin/activate" ]; then
 
@@ -14,8 +16,8 @@ if [ ! -f "$VIRTUALENV_DIR/bin/activate" ]; then
 
 fi
 
-source "$VIRTUALENV_DIR/bin/activate"
+source "$VIRTUALENV_DIR"/bin/activate
 
-pip install -r $(pwd)/requirements.txt
+pip install -r "$WORKING_DIR"/requirements.txt
 
-chmod 777 -R "$VIRTUALENV_DIR"
+sudo chmod 777 -R "$VIRTUALENV_DIR"
