@@ -1,3 +1,5 @@
+import datetime
+
 from django.conf import settings
 from django.shortcuts import render
 from django.views.generic import TemplateView
@@ -22,7 +24,7 @@ class SkillSet:
 
     class _Skills:
         def __init__(self):
-            self.skills_set = ('Python', 'TypeScript', 'Ruby', 'Javascript', 'Html', 'Css',
+            self.skills_set = ('Python', 'TypeScript', 'Ruby', 'Javascript', 'Html', 'ReactJs',
                                'Jquery', 'Django', 'Django Rest Framework', 'NodeJs', 'AngularJs',
                                'RESTful', 'OpenApi', 'PostgreSql', 'MySql', 'MongoDB', 'Git', 'Celery',
                                'RabbitMQ', 'Redis', 'GitHub', 'CircleCi', 'CI/CD', 'Jira', 'Aws', 'Ubuntu',
@@ -54,7 +56,13 @@ class BaseContact(TemplateView):
         return render(
             request,
             self.template_name,
-            self.get_context_data(contact=ContactForm(), recaptcha=settings.GOOGLE_RECAPTCHA_HTML, resume=False)
+            self.get_context_data(
+                contact=ContactForm(),
+                recaptcha=settings.GOOGLE_RECAPTCHA_HTML,
+                mapKey=settings.GOOGLE_MAP_KEY,
+                resume=False,
+                year=datetime.datetime.now().date().year
+            )
         )
 
 

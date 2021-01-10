@@ -9,5 +9,5 @@ bin/runserver
 To generate the resume `pdf` version:
 
 ```shell script
-bin/generate_pdf_resume
+bin/generate_resume
 ```

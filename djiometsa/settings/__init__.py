@@ -6,7 +6,7 @@ from .base import BASE_DIR, CLEF_NAME
 
 
 def dev_settings():
-    return 'runserver' in sys.argv
+    return 'runserver' in sys.argv or 'runscript' in sys.argv
 
 
 if dev_settings():
@@ -25,6 +25,9 @@ SECRET_KEY = clef['django_key']
 # Recaptcha Key
 GOOGLE_RECAPTCHA_KEY = clef['recaptcha']
 GOOGLE_RECAPTCHA_HTML = clef['recaptchaHtml']
+
+# Map settings
+GOOGLE_MAP_KEY = clef['mapKey']
 
 # Email settings
 EMAIL_BACKEND = clef['email_backend']
