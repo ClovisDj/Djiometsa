@@ -52,7 +52,7 @@
     <div class="col-xs-12 col-md-10 col-md-offset-1">
       <div class="col-xs-12 col-md-6 col-md-offset-6">
         <iframe id="myMap" width="100%" height="450" frameborder="0" style="border:0"
-        src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCz-3GnewtlIF3BlBe_JWdibGBxambQO8Q&q=yaounde+cameroon&zoom=5" allowfullscreen>
+        src="https://www.google.com/maps/embed/v1/search?key={{ mapKey }}&q=yaounde+cameroon&zoom=5" allowfullscreen>
     </iframe>
       </div>
     </div>
@@ -164,6 +164,31 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
+      <div class="col-xs-12 col-md-6">
+        <div class="jumbotron">
+          <h2 id="silicon-hills">Austin Texas</h2>
+          <p>
+            In April 2020 while the COVID-19 was spreading like wildfire, I was so fortunate to get this great
+            job opportunity to move back in the Austin area. Opportunity that I took and since then my family and I are
+            back into the <strong><i>Silicon Hills</i></strong> &#128515
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
+      <div class="col-xs-12 col-md-6 col-md-offset-6">
+        <img id="silicon-hills-img" src="{% static 'image/Austin-2021.jpg' %}"
+        class="img-responsive" style="width:100%;" alt="Image Not Found">
+      </div>
+    </div>
+  </div>
+
 </div>
 {% endblock %}
 

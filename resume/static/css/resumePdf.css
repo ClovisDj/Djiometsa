@@ -94,6 +94,12 @@ body {
   margin-top: 15px;
 }
 
+.main .col-xs-12 .jumbotron .experience .alertmedia{
+  border-radius: 10px;
+  border: 3px solid rgba(0, 104, 178, 0.7);
+  margin: 0;
+}
+
 .main .col-xs-12 .jumbotron .experience .djiometsa{
   border-radius: 10px;
   border: 3px solid rgba(0, 104, 178, 0.7);
